@@ -1,0 +1,7 @@
+#buildlog.txt#
+__snapshots__/
+buildlog.txt
+node_modules/
+\#*\#
+*~
+.\#*

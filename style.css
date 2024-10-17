@@ -1,0 +1,49 @@
+body {
+    background-color: powderblue;
+}
+
+#flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 35px;
+}
+
+#eisenhower-matrix {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 25%;
+    height: 250px;
+    border: 1.5px solid black;
+}
+
+.quadrants {
+    text-align: left;
+    font-size: 17px;
+    border: 1.5px solid black;
+}
+
+.quadrants > ul {
+    display: flex;
+    list-style-type: none;
+    text-align: left;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+}
+
+#eisenhower-matrix > #q1 {
+    background-color: blue;
+}
+
+#eisenhower-matrix > #q2 {
+    background-color: red;
+}
+
+#eisenhower-matrix > #q3 {
+    background-color: purple;
+}
+
+#eisenhower-matrix > #q4 {
+    background-color: green;
+}
