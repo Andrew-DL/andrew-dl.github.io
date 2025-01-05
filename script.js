@@ -1,6 +1,6 @@
 let input = document.querySelector('input')
 
-let taskList = []//not needed, maybe? code still worked while this was commented out.
+let taskList = []
 //let taskListItem = {task: undefined, 'urgent': undefined, 'important': undefined}
 //defined taskListItem in the addToTaskList function instead to prevent the data from previous task entries from overwriting each other. refer to: pass by refe value
 
@@ -24,6 +24,10 @@ document.querySelector("#list").addEventListener('click', function(e){
 	data.splice(index, 1)
 	localStorage.setItem('taskList', JSON.stringify(data))
 	e.target.parentElement.remove()
+	clearQuadrants()
+	let taskList = JSON.parse(localStorage.getItem('taskList'))
+	let ul = document.getElementById('list')
+	loadMatrix(taskList)
     }
 })
 
@@ -43,14 +47,7 @@ window.addEventListener("load", (event) => {
 	taskList = []
 	storeTaskList()
     }
-    taskList.forEach(function (task) {	
-	let li = document.createElement("li")
-	li.textContent = task.task + " | "
-	createCheckBoxes(li, task)
-	addDeleteTaskButton(li)
-	ul.appendChild(li)
-	addTaskToMatrix(task)
-    })
+    loadVisuals(taskList, ul)
 })
 
 function addToTaskList(input) {
@@ -119,7 +116,21 @@ function addTaskToMatrix(taskListItem) {
 	    q4li.textContent = taskListItem['task']
 	    q4List.appendChild(q4li)
 	}
-    }
+}
+
+//make a function that replicates the above but for deleting all LIs from the matrix
+function clearQuadrants() {
+    let q1list = document.getElementById("q1list")
+    let q2list = document.getElementById("q2list")
+    let q3list = document.getElementById("q3list")
+    let q4list = document.getElementById("q4list")
+    
+    q1list.replaceChildren()
+    q2list.replaceChildren()
+    q3list.replaceChildren()
+    q4list.replaceChildren()
+}
+
 
 function clog(text) {
     console.log(text)
@@ -161,6 +172,23 @@ function getItemValue(taskListItem, value = 0) {
     return value
 }
 
+function loadMatrix(taskList) {
+    taskList.forEach(function(task) {
+	addTaskToMatrix(task)
+    })
+}
+
+function loadVisuals(taskList, ul) {
+    taskList.forEach(function (task) {	
+	let li = document.createElement("li")
+	li.textContent = task.task + " | "
+	createCheckBoxes(li, task)
+	addDeleteTaskButton(li)
+	ul.appendChild(li)
+	addTaskToMatrix(task)
+    })
+}
+    
 function storeTaskList() {
     let taskListString = JSON.stringify(taskList)
     console.log(taskListString)
@@ -173,4 +201,11 @@ function resetFields() {
     document.getElementById('important').checked = false
 }
 
-
+function updateMatrix() {
+    taskList.forEach(function (task) {	
+	let li = document.createElement("li")
+	li.textContent = task.task
+	getItemValue(task, value)
+	ul.removeChild(li)
+    })
+}
