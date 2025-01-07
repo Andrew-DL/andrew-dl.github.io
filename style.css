@@ -78,12 +78,12 @@ body {
 
 @media only screen and (max-width: 600px) {
     body {
-	font-size: 15px;
+	font-size: 14px;
     }
 
     #flex-container {
 	flex-wrap: wrap;
-	font-size: 12px;
+	font-size: 14px;
     }
 
     #eisenhower-matrix {
