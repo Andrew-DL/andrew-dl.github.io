@@ -77,13 +77,9 @@ body {
 }*/
 
 @media only screen and (max-width: 600px) {
-    body {
-	font-size: 16px;
-    }
-
     #flex-container {
 	flex-wrap: wrap;
-	font-size: 14px;
+	font-size: 16px;
     }
 
     #eisenhower-matrix {
