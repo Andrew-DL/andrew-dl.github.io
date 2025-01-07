@@ -83,6 +83,7 @@ body {
 
     #flex-container {
 	flex-wrap: wrap;
+	font-size: 12px;
     }
 
     #eisenhower-matrix {
