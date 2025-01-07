@@ -2,6 +2,7 @@ body {
     background-color: #100e17;
     color: #bebebe;
     font-family: 'Rubik';
+    font-size: 25.5px;
 }
 
 #flex-container {
@@ -22,7 +23,7 @@ body {
 
 .quadrants {
     text-align: left;
-    font-size: 17px;
+    font-size: 25.5px;
     border: 1.5px solid black;
     overflow-x: hidden;
     overflow-y: auto;
