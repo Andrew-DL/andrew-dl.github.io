@@ -6,9 +6,17 @@ let taskList = []
 
 let taskInput = document.getElementById("ToDoInput")
 taskInput.addEventListener("keydown", (event) => {
-    //console.log("enter event label", event)
     if (event.key === "Enter") {
 	console.log('enter key is pressed!!!')
+	addToTaskList()
+	storeTaskList()
+	resetFields()
+    }
+})
+
+taskInput.addEventListener("click", function(e){
+    if (e.target.id === 'submit') {
+	console.log('submit button is pressed!!!')
 	addToTaskList()
 	storeTaskList()
 	resetFields()
@@ -71,7 +79,9 @@ function addToTaskList(input) {
     li.setAttribute('class', 'li')
     //Double check whether or not I'm using setAttribute correctly here in conjun above two lines
 
-    li.textContent = taskListItem.task + " | "
+    li.textContent = taskListItem.task
+    let linebreak = document.createElement("br")
+    li.appendChild(linebreak)
     createCheckBoxes(li, taskListItem)
     addDeleteTaskButton(li)
 
@@ -139,14 +149,14 @@ function clog(text) {
 function createCheckBoxes(element, taskListItem) {
     let uLabel = document.createElement("label")
     //uLabel.htmlFor = "urgent"
-    uLabel.textContent = "U?"
+    uLabel.textContent = "Urgent?"
 
     let checkBoxU = document.createElement("input")
     checkBoxU.type = "checkbox"
     checkBoxU.disabled = true
 
     let iLabel = document.createElement("label")
-    iLabel.textContent = "I?"
+    iLabel.textContent = "  Important?"
 
     let checkBoxI = document.createElement("input")
     checkBoxI.type = "checkbox"
@@ -159,6 +169,9 @@ function createCheckBoxes(element, taskListItem) {
     element.appendChild(checkBoxU)
     element.appendChild(iLabel)
     element.appendChild(checkBoxI)
+
+    let linebreak = document.createElement("br")
+    element.appendChild(linebreak)
 }
 
 function getItemValue(taskListItem, value = 0) {
@@ -181,8 +194,11 @@ function loadMatrix(taskList) {
 function loadVisuals(taskList, ul) {
     taskList.forEach(function (task) {	
 	let li = document.createElement("li")
-	li.textContent = task.task + " | "
+	li.textContent = task.task
+	let linebreak = document.createElement("br")
+	li.appendChild(linebreak)
 	createCheckBoxes(li, task)
+	/*li.appendChild(linebreak)*/
 	addDeleteTaskButton(li)
 	ul.appendChild(li)
 	addTaskToMatrix(task)
