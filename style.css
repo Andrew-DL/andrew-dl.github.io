@@ -65,6 +65,53 @@ body {
     max-width: 30%;
 }
 
+#whatDoYouNeedToDo {
+    margin-bottom: 5.5px;
+}
+
+#makeTaskText {
+    flex-direction: row;
+}
+
+#task {
+    width: 16.3%;
+    height: 6%;
+    font-size: 23px;
+}
+
+#submit {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: #e2e2e2;
+    border: none;
+    margin-left: 3px;
+}
+
+.checkboxes{
+    margin-top: 5px;
+}
+
+.uLabel {
+    font-size: 21px;
+}
+
+.iLabel {
+    font-size: 21px;
+}
+
+.deleteTask {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #e2e2e2;
+    border: none;
+    display: inline-block;
+    padding: 1px 8px;
+    margin-top: 11px;
+    margin-bottom: 15px;
+}
+
 /*
 <uniquifier>: Use a unique and descriptive class name
 <weight>: Use a value from 300 to 900

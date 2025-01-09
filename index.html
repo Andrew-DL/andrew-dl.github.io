@@ -14,10 +14,12 @@
     <div id="flex-container">
     <div id="ToDoInput">
         <h1>To-Do</h1>
-	<label for="task">What Do You Need To Do?</label><br>
+        <div id="makeTaskText">
+	<h4 id="whatDoYouNeedToDo" for="task">What Do You Need To Do?</h4>
 	<input type="text" id="task" name="To-Do" value="">
-	<button type="button" id="submit">Submit</button><br>
-        <h3>Is It Urgent or Important?</h3>
+	<button type="button" id="submit">Submit</button>
+	</div>
+        <h4>Is It Urgent or Important?</h4>
         <label for="urgent">Urgent?</label>
         <input type="checkbox" id="urgent" name="urgent">
 	<label for="important">Important?</label>

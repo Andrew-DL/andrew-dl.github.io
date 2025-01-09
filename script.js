@@ -148,7 +148,7 @@ function clog(text) {
 
 function createCheckBoxes(element, taskListItem) {
     let uLabel = document.createElement("label")
-    //uLabel.htmlFor = "urgent"
+    uLabel.className = "uLabel"
     uLabel.textContent = "Urgent?"
 
     let checkBoxU = document.createElement("input")
@@ -156,7 +156,8 @@ function createCheckBoxes(element, taskListItem) {
     checkBoxU.disabled = true
 
     let iLabel = document.createElement("label")
-    iLabel.textContent = "  Important?"
+    iLabel.className = "iLabel"
+    iLabel.textContent = "  " + "Important?"
 
     let checkBoxI = document.createElement("input")
     checkBoxI.type = "checkbox"
@@ -164,14 +165,18 @@ function createCheckBoxes(element, taskListItem) {
     
     checkBoxU.checked = taskListItem['urgent']
     checkBoxI.checked = taskListItem['important']
-    
-    element.appendChild(uLabel)
-    element.appendChild(checkBoxU)
-    element.appendChild(iLabel)
-    element.appendChild(checkBoxI)
 
+    let div = document.createElement("div")
+    div.className = "checkboxes"
+    element.appendChild(div)
+    
+    div.appendChild(uLabel)
+    div.appendChild(checkBoxU)
+    div.appendChild(iLabel)
+    div.appendChild(checkBoxI)
+    
     let linebreak = document.createElement("br")
-    element.appendChild(linebreak)
+    div.appendChild(linebreak)
 }
 
 function getItemValue(taskListItem, value = 0) {
