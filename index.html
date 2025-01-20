@@ -18,12 +18,12 @@
 	<h4 id="whatDoYouNeedToDo" for="task">What Do You Need To Do?</h4>
 	<input type="text" id="task" name="To-Do" value="">
 	<button type="button" id="submit">Submit</button>
-	</div>
+    </div>
         <h4>Is It Urgent or Important?</h4>
-        <label for="urgent">Urgent?</label>
-        <input type="checkbox" id="urgent" name="urgent">
-	<label for="important">Important?</label>
-        <input type="checkbox" id="important" name="important"><br>
+        <span class="inputCheckboxes"><label for="urgent" id="inputULabel">Urgent?</label>
+        <input type="checkbox" id="urgent" name="urgent"></span>
+	<spam class="inputCheckboxes"<label for="important" id="inputILabel">Important?</label>
+        <input type="checkbox" id="important" name="important"></span><br>
     </div>
     <div id="tasklist">
       <h2>Task List</h2>
@@ -32,13 +32,21 @@
     </div>
     </div>
     <div id="eisenhower-matrix">
-      <div id="q1" class="quadrants"><ul id="q1list"></ul></div>
+      <div id="q1" class="quadrants">
+	<h4 class="quadrantTitles">Urgent and Important</h4>
+	<ul id="q1list"></ul></div>
       <!-- Yes U, Yes I -->
-      <div id="q2" class="quadrants"><ul id="q2list"></ul></div>
+      <div id="q2" class="quadrants">
+	<h4 class="quadrantTitles">Urgent</h4>
+	<ul id="q2list"></ul></div>
       <!-- Yes U, No I-->
-      <div id="q3" class="quadrants"><ul id="q3list"></ul></div>
+      <div id="q3" class="quadrants">
+	<h4 class="quadrantTitles">Important</h4>
+	<ul id="q3list"></ul></div>
       <!-- No U, Yes I-->
-      <div id="q4" class="quadrants"><ul id="q4list"></ul></div>
+      <div id="q4" class="quadrants">
+	<h4 class="quadrantTitles">Neither Urgent Nor Important</h4>
+	<ul id="q4list"></ul></div>
       <!-- No U, No I-->
     </div>  
     <script src="script.js"></script>

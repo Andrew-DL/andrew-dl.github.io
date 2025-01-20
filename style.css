@@ -41,6 +41,19 @@ body {
     padding-right: 8.5px;
 }
 
+.quadrantTitles {
+    text-align: center;
+    margin: 10px 0px 13px 0px;
+}
+
+.quadrants > ul > li {
+    padding-bottom: 9px;
+}
+
+.quadrants > ul > li:hover {
+    font-size: 26px;
+}
+
 #eisenhower-matrix > #q1 {
     background-color: #eff1e8;
     color: #100e17;
@@ -65,6 +78,11 @@ body {
     max-width: 30%;
 }
 
+#list > li:hover {
+    color: white;
+    font-size: 27px;
+}
+
 #whatDoYouNeedToDo {
     margin-bottom: 5.5px;
 }
@@ -73,10 +91,28 @@ body {
     flex-direction: row;
 }
 
+.inputCheckboxes:hover {
+    font-size: 27px;
+}
+
+input[type=checkbox] {
+    height: 20px;
+    width: 17px;
+}
+
+input[type=checkbox]:hover {
+    height: 21.5px;
+    width: 19.5px;
+} 
+
 #task {
     width: 16.3%;
     height: 6%;
     font-size: 23px;
+}
+
+#task:hover {
+    
 }
 
 #submit {
@@ -86,6 +122,10 @@ body {
     background-color: #e2e2e2;
     border: none;
     margin-left: 3px;
+}
+
+#submit:hover {
+    font-size: 21.5px;
 }
 
 .checkboxes{
@@ -110,6 +150,10 @@ body {
     padding: 1px 8px;
     margin-top: 11px;
     margin-bottom: 15px;
+}
+
+.deleteTask:hover {
+    font-size: 19.5px;
 }
 
 /*
