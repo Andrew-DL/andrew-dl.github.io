@@ -93,6 +93,7 @@ body {
 
 .inputCheckboxes:hover {
     font-size: 27px;
+    color: white;
 }
 
 input[type=checkbox] {
